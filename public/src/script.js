@@ -37,12 +37,68 @@ if ("serviceWorker" in navigator) {
   })
 }
 
+function configurePushSub() {
+  let reg;
+  navigator.serviceWorker.ready
+    .then(swreg => {
+      reg = swreg;
+      return swreg.pushManager.getSubscription();
+    })
+    .then(sub => {
+      if(sub === null) {
+        console.log('es null')
+        // Create new subscription
+        const vapidPublicKey = "BDoBrZ0CUqkH2wc-4deNimThIoYqdUuNcIEqR8yGNPDd3dghEHL8FHUWfBT7n31FVFUOyvBieud67VE0cAnZB7c"
+        const convertedVapidKey = urlBase64ToUint8Array(vapidPublicKey)
+        return reg.pushManager.subscribe({
+          userVisibleOnly: true,
+          applicationServerKey: convertedVapidKey
+        });
+      } else {
+        // We have a subscription
+      }
+    })
+    .then(newSub => {
+      return fetch('https://twitter-pwa-54709-default-rtdb.firebaseio.com/subscriptions.json', {
+        method: 'POST',
+        headers: {
+          'Content-type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify(newSub)
+      })
+    })
+    .then(res => {
+      if (res.ok){
+        displayConfirmNotification()
+      }
+    })
+    .catch(err => {
+      console.log('SOME ERROR:', err);
+    })
+}
+
+function askForPermission(event) {
+  Notification.requestPermission(result => {
+    console.log('user choice', result);
+    if (result !== 'granted') {
+      console.log('no permission granted!');
+    } else {
+      console.log('aqui');
+      // configurePushSub();
+    }
+  });
+}
+
+const enableNotificationButton = document.getElementById('notification-button');
+
+enableNotificationButton.addEventListener('click', askForPermission);
 
 const formulario = document.getElementById("formulario")
 
 function postear(e) {
   e.preventDefault();
-  fetch("https://twitter-pwa-54709-default-rtdb.firebaseio.com/posts.json", {
+  fetch("https://us-central1-twitter-pwa-54709.cloudfunctions.net/storePostData", {
     method: 'POST',
     body: JSON.stringify({
         comentario: document.getElementById("comentario").value,
