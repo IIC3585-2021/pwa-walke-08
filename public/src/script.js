@@ -1,33 +1,3 @@
-const container = document.querySelector(".container")
-const coffees = [
-  { name: "Perspiciatis", image: "https://raw.githubusercontent.com/ibrahima92/pwa-with-vanilla-js/master/images/coffee1.jpg" },
-  { name: "Voluptatem", image: "https://raw.githubusercontent.com/ibrahima92/pwa-with-vanilla-js/master/images/coffee2.jpg" },
-  { name: "Explicabo", image: "https://raw.githubusercontent.com/ibrahima92/pwa-with-vanilla-js/master/images/coffee3.jpg" },
-  { name: "Rchitecto", image: "https://raw.githubusercontent.com/ibrahima92/pwa-with-vanilla-js/master/images/coffee4.jpg" },
-  { name: " Beatae", image: "https://raw.githubusercontent.com/ibrahima92/pwa-with-vanilla-js/master/images/coffee5.jpg" },
-  { name: " Vitae", image: "https://raw.githubusercontent.com/ibrahima92/pwa-with-vanilla-js/master/images/coffee6.jpg" },
-  { name: "Inventore", image: "https://raw.githubusercontent.com/ibrahima92/pwa-with-vanilla-js/master/images/coffee7.jpg" },
-  { name: "Veritatis", image: "https://raw.githubusercontent.com/ibrahima92/pwa-with-vanilla-js/master/images/coffee8.jpg" },
-  { name: "Accusantium", image: "https://raw.githubusercontent.com/ibrahima92/pwa-with-vanilla-js/master/images/coffee9.jpg" },
-]
-
-const showCoffees = () => {
-  let output = ""
-  coffees.forEach(
-    ({ name, image }) =>
-      (output += `
-              <div class="card">
-                <img class="card--avatar" src=${image} />
-                <h1 class="card--title">${name}</h1>
-                <a class="card--link" href="#">Taste</a>
-              </div>
-              `)
-  )
-  container.innerHTML = output
-}
-
-document.addEventListener("DOMContentLoaded", showCoffees)
-
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", function() {
     navigator.serviceWorker
@@ -35,6 +5,19 @@ if ("serviceWorker" in navigator) {
       .then(res => console.log("service worker registered"))
       .catch(err => console.log("service worker not registered", err))
   })
+}
+
+function displayConfirmNotification() {
+  if('serviceWorker' in navigator){
+    const options = {
+      body: 'You subscribe to our notification service!',
+    };
+
+    navigator.serviceWorker.ready
+      .then(swreg => {
+        swreg.showNotification('Successfully subscribe!', options);
+      });
+  }
 }
 
 function configurePushSub() {
@@ -48,7 +31,7 @@ function configurePushSub() {
       if(sub === null) {
         console.log('es null')
         // Create new subscription
-        const vapidPublicKey = "BDoBrZ0CUqkH2wc-4deNimThIoYqdUuNcIEqR8yGNPDd3dghEHL8FHUWfBT7n31FVFUOyvBieud67VE0cAnZB7c"
+        const vapidPublicKey = "BFmbPbd5D5gWHm6LeUSHMevuEt5VTA2pnciOdw_SfoDj0n377z-MXIp-tpMYZuMBIQiMenG0b8_mOkz1lsK9K78"
         const convertedVapidKey = urlBase64ToUint8Array(vapidPublicKey)
         return reg.pushManager.subscribe({
           userVisibleOnly: true,
@@ -93,6 +76,21 @@ function askForPermission(event) {
 const enableNotificationButton = document.getElementById('notification-button');
 
 enableNotificationButton.addEventListener('click', askForPermission);
+
+function urlBase64ToUint8Array(base64String) {
+  let padding = '='.repeat((4 - base64String.length % 4) % 4);
+  let base64 = (base64String + padding)
+    .replace(/\-/g, '+')
+    .replace(/_/g, '/');
+
+  let rawData = window.atob(base64);
+  let outputArray = new Uint8Array(rawData.length);
+
+  for (let i = 0; i < rawData.length; ++i) {
+    outputArray[i] = rawData.charCodeAt(i);
+  }
+  return outputArray;
+}
 
 const formulario = document.getElementById("formulario")
 
