@@ -28,3 +28,20 @@ self.addEventListener("fetch", fetchEvent => {
     })
   )
 })
+
+self.addEventListener('push', e => {
+  console.log('me pushearon jejeje ! :D', e);
+  
+  let data = {title: "New", content: "Something new happened!"};
+  if(e.data) {
+    data = JSON.parse(e.data.text());
+  }
+
+  const options = {
+    body: data.content
+  }
+
+  e.waitUntil(
+    self.registration.showNotification(data.title, options)
+  );
+});

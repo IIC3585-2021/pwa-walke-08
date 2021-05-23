@@ -68,7 +68,7 @@ function askForPermission(event) {
       console.log('no permission granted!');
     } else {
       console.log('aqui');
-      // configurePushSub();
+      configurePushSub();
     }
   });
 }
