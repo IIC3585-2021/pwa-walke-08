@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <title>repl.it</title>
+    <title>Tarea 4 PWA</title>
 
     <link rel="manifest" href="manifest.json" />
 
@@ -11,15 +11,25 @@
     <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
     <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="/src/style.css" rel="stylesheet" type="text/css" />
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <style>
+      .demo-list-three {
+        width: 650px;
+      }
+      .top-space {
+        height: 60px;
+      }
+    </style>
 
     <script defer type="module" src="/src/script.js"></script>
   </head>
   <body>
       <!-- The drawer is always open in large screens. The header is always shown,
   even in small screens. -->
-<div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer
+<div class="mdl-layout mdl-js-layout
             mdl-layout--fixed-header">
   <header class="mdl-layout__header">
     <div class="mdl-layout__header-row">
@@ -40,8 +50,8 @@
   <div class="mdl-layout__drawer">
     <span class="mdl-layout-title">Faketter</span>
     <nav class="mdl-navigation">
-      <a class="mdl-navigation__link" href="">Home Page</a>
-      <a class="mdl-navigation__link" href="">About</a>
+      <a class="mdl-navigation__link" href="/">Home Page</a>
+      <a class="mdl-navigation__link" href="/src/about.html">About</a>
       <!-- Raised button with ripple -->
       <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect ml-3 mr-3 pr-0 pl-0 mt-2" id='notification-button'>
         Habilitar Notificaciones
@@ -52,176 +62,89 @@
     <div class="page-content"><!-- Your content goes here --></div>
   </main>
 </div>
-    <main>
-      <nav>
-        <h1>Dev'Coffee</h1>
-        <ul>
-          <li>Home</li>
-          <li>About</li>
-          <li>Blog</li>
-        </ul>
-      </nav>
-      <div class="container"></div>
-    </main>
-    <footer>
-      <!-- home | search | profile -->
-    </footer>
 
-    <!-- Three Line List with secondary info and action -->
-<style>
-.demo-list-three {
-  width: 650px;
-}
-</style>
+<div class="top-space"></div>
 
-<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
 <div id="comentarios">
-<div class="container">
-  <div class="row">
-      <div class="col-md-8">
-          <div class="post-content">
-            <div class="post-container">
-              <img src="https://bootdey.com/img/Content/avatar/avatar6.png" alt="user" class="profile-photo-md pull-left">
-              <div class="post-detail">
-                <div class="user-info">
-                  <h5><a href="#" class="profile-link">Alexis Clark</a></h5>
-                  <p class="text-muted">Published a photo about 3 mins ago</p>
-                </div>
-                <div class="line-divider"></div>
-                <div class="post-text">
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                </div>
-                <div class="line-divider"></div>
-                <div class="post-comment">
-                  <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="" class="profile-photo-sm">
-                  <p><a href="timeline.html" class="profile-link">Diana </a><i class="em em-laughing"></i> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud </p>
-                </div>
-                <div class="post-comment">
-                  <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="" class="profile-photo-sm">
-                  <input type="text" class="form-control" placeholder="Post a comment">
-                  <!-- Colored FAB button with ripple -->
-                  <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
-                    <i class="material-icons">add</i>
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-      </div>
-  </div>
+
 </div>
-<div class="container">
-  <div class="row">
-      <div class="col-md-8">
-          <div class="post-content">
-            <div class="post-container">
-              <img src="https://bootdey.com/img/Content/avatar/avatar6.png" alt="user" class="profile-photo-md pull-left">
-              <div class="post-detail">
-                <div class="user-info">
-                  <h5><a href="#" class="profile-link">Alexis Clark</a>></h5>
-                  <p class="text-muted">Published a photo about 3 mins ago</p>
-                </div>
-                <div class="line-divider"></div>
-                <div class="post-text">
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                </div>
-                <div class="line-divider"></div>
-                <div class="post-comment">
-                  <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="" class="profile-photo-sm">
-                  <p><a href="timeline.html" class="profile-link">Diana </a><i class="em em-laughing"></i> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud </p>
-                </div>
-                <form action="">
-                  <div class="post-comment">
-                    <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="" class="profile-photo-sm">
-                    <input type="text" class="form-control" placeholder="name">
-                    </div>
-                    <div class="post-comment">
-                    <input type="text" class="form-control ml-5" placeholder="Post a comment">
-                    <!-- Colored FAB button with ripple -->
-                    <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
-                      <i class="material-icons">add</i>
-                    </button>
-                  </div>
-                </form>
-              </div>
-            </div>
-          </div>
-      </div>
-  </div>
-</div>
-</div>
-<div id="postear">
-  <form action="" method="post" id="formulario">
-  <label for="usuario">Nombre de usuario</label>
-  <input type="text" name="nickname" id="nickname">
-  <label for="comentario">Comentar</label>
-  <input type="text" name="Comment" id="comentario">
-  <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored" type="submit">
-    <i class="material-icons">add</i>
-  </button>
-  </form>
-</div>
+
 <nav class="navbar fixed-bottom navbar-light bg-light nav-pills nav-fill">
-  <a class="navbar-brand nav-item" href="#">Home</a>
-  <a class="navbar-brand nav-item" href="#">Profile</a>
-  <a class="navbar-brand nav-item" href="#">About</a>
+  <a class="navbar-brand nav-item" href="/">Home</a>
+  <a class="navbar-brand nav-item" href="/src/about.html">About</a>
 </nav>
-  <!-- The core Firebase JS SDK is always required and must be listed first -->
-<script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-app.js"></script>
 
-<!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#available-libraries -->
-<script src="/src/web.js"></script>
-
+<div class="container" id="postear">
+  <div class="row">
+  <div class="col-md-8">
+  <form action="" method="post" id="formulario">
+    <div class="form-group row">
+      <label class="col-sm-2 col-form-label" for="usuario">Usuario:</label>
+      <div class="col-sm-8">
+      <input class="form-control" type="text" name="nickname" id="nickname">
+      </div> 
+    </div>
+    <div class="form-group row">
+      <label class="col-sm-2 col-form-label" for="comentario">Comentario:</label>
+      <div class="col-sm-8">
+        <textarea class="form-control" name="Comment" id="comentario" rows="2"></textarea>
+      </div> 
+      <button class="col-sm-1 mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored" type="submit">
+        <i class="material-icons">add</i>
+      </button>
+    </div>
+  </form>
+  </div>
+  </div>
+</div>
 
 <template>
-<div class="container">
-  <div class="row">
-      <div class="col-md-8">
-          <div class="post-content">
-            <div class="post-container">
-              <img src="https://bootdey.com/img/Content/avatar/avatar6.png" alt="user" class="profile-photo-md pull-left">
-              <div class="post-detail">
-                <div class="user-info">
-                  <h5><a href="#" class="profile-link">Alexis Clark</a></h5>
-                  <p class="text-muted">Published a photo about 3 mins ago</p>
-                </div>
-                <div class="line-divider"></div>
-                <div class="post-text">
-                  <p class="opinion">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                </div>
-                <div class="line-divider"></div>
-                <div id="respuestas"></div>
-                <form action="" class="comentar">
-                  <div class="post-comment">
-                    <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="" class="profile-photo-sm">
-                    <input type="text" class="form-control" placeholder="name">
-                    </div>
-                    <div class="post-comment">
-                    <input type="text" class="form-control ml-5" placeholder="Post a comment">
-                    <!-- Colored FAB button with ripple -->
-                    <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
-                      <i class="material-icons">add</i>
-                    </button>
+  <div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="post-content">
+              <div class="post-container">
+                <img src="https://bootdey.com/img/Content/avatar/avatar6.png" alt="user" class="profile-photo-md pull-left">
+                <div class="post-detail">
+                  <div class="user-info">
+                    <h5><a href="#" class="profile-link">Alexis Clark</a></h5>
+                    <p class="text-muted">Published a photo about 3 mins ago</p>
                   </div>
-                </form>
+                  <div class="line-divider"></div>
+                  <div class="post-text">
+                    <p class="opinion">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                  </div>
+                  <div class="line-divider"></div>
+                  <div id="respuestas"></div>
+                  <form action="" class="comentar">
+                    <div class="post-comment">
+                      <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="" class="profile-photo-sm">
+                      <input type="text" class="form-control" id="namesito" placeholder="name">
+                      </div>
+                      <div class="post-comment">
+                      <input type="text" class="form-control ml-5" id="postito" placeholder="Post a comment">
+                      <!-- Colored FAB button with ripple -->
+                      <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+                        <i class="material-icons">add</i>
+                      </button>
+                    </div>
+                  </form>
+                </div>
               </div>
             </div>
-          </div>
-      </div>
+        </div>
+    </div>
   </div>
-</div>
-</template>
+  </template>
 
 <template>
   <div class="post-comment">
     <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="" class="profile-photo-sm">
-    <p><a href="#" class="profile-link">Diana </a> </p>
+    <p><a href="#" class="profile-link"></a> </p>
   </div>
 </template>
 
-
-
+<script src="/src/web.js"></script>
 
 </body>
 </html>

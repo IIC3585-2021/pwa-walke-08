@@ -1,0 +1,18 @@
+.title {
+    font-family: Georgia, serif;
+    font-size: 1.75rem;
+    text-align: center;
+}
+
+.paragraph {
+  font-family: Georgia, serif;
+  font-size: 20px;
+  text-align: justify;
+  justify-content: space-between;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+.imagen {
+  text-align: center;
+}
