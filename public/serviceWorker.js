@@ -5,6 +5,11 @@ const assets = [
   "/index.html",
   "/src/style.css",
   "/src/script.js",
+  "https://code.getmdl.io/1.3.0/material.indigo-pink.min.css",
+  "https://code.getmdl.io/1.3.0/material.min.js",
+  "https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css",
+  "https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css",
+  "https://fonts.googleapis.com/icon?family=Material+Icons",
 ]
 
 self.addEventListener("install", installEvent => {
@@ -21,17 +26,38 @@ self.addEventListener('activate', e => {
   return self.clients.claim();
 });
 
+function isInArray(string, array) {
+  for (let i=0; i < array.length; i++) {
+    if (array[i] === string) {
+      return true;
+    }
+  }
+  return false;
+}
+
 self.addEventListener("fetch", fetchEvent => {
-  fetchEvent.respondWith(
-    caches.match(fetchEvent.request).then(res => {
-      return res || fetch(fetchEvent.request)
-    })
-  )
+  if (isInArray(fetchEvent.request.url, assets)) {
+    fetchEvent.respondWith(
+      caches.match(fetchEvent.request)
+    )
+  } else {
+    fetchEvent.respondWith(
+      fetch(fetchEvent.request)
+        .then(res => {
+          return caches.open(CACHE_DYNAMIC)
+            .then(cache => {
+              cache.put(fetchEvent.request.url, res.clone())
+              return res;
+            })
+        })
+        .catch(err => {
+          return caches.match(fetchEvent.request)
+        })
+    )
+  }
 })
 
 self.addEventListener('push', e => {
-  console.log('me pushearon jejeje ! :D', e);
-  
   let data = {title: "New", content: "Something new happened!"};
   if(e.data) {
     data = JSON.parse(e.data.text());

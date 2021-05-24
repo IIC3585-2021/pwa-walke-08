@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="/src/style.css" rel="stylesheet" type="text/css" />
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+    <meta name="theme-color" content="#317EFB"/>
 
     <style>
       .demo-list-three {
@@ -29,7 +29,7 @@
   <body>
       <!-- The drawer is always open in large screens. The header is always shown,
   even in small screens. -->
-<div class="mdl-layout mdl-js-layout
+<div class="mdl-layout mdl-js-layout 
             mdl-layout--fixed-header">
   <header class="mdl-layout__header">
     <div class="mdl-layout__header-row">
@@ -76,17 +76,17 @@
 
 <div class="container" id="postear">
   <form action="" method="post" id="formulario">
-  <div class="row">
-    <div class="col-md-8">
-    <div class="form-group row">
-      <label class="col-sm-2 col-form-label" for="usuario">Usuario:</label>
-      <div class="col-sm-8">
+  <div> 
+    <div>
+    <div class="form-group">
+      <label class="form-label" for="usuario">Usuario:</label>
+      <div>
       <input class="form-control" type="text" name="nickname" id="nickname">
       </div> 
     </div>
-    <div class="form-group row">
-      <label class="col-sm-2 col-form-label" for="comentario">Comentario:</label>
-      <div class="col-sm-8">
+    <div class="form-group">
+      <label class="form-label"  for="comentario">Comentario:</label>
+      <div>
         <textarea class="form-control" name="Comment" id="comentario" rows="2"></textarea>
       </div> 
     </div>
@@ -102,8 +102,8 @@
 
 <template>
   <div class="container">
-    <div class="row">
-        <div class="col-md-8">
+    <div>
+        <div>
             <div class="post-content">
               <div class="post-container">
                 <img src="https://bootdey.com/img/Content/avatar/avatar6.png" alt="user" class="profile-photo-md pull-left">
