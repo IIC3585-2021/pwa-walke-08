@@ -38,7 +38,9 @@ self.addEventListener('push', e => {
   }
 
   const options = {
-    body: data.content
+    body: data.content,
+    icon: "/src/images/android-icon-48-48.png",
+    badge: "/src/images/android-icon-48-48.png",
   }
 
   e.waitUntil(

@@ -15,4 +15,5 @@
 
 .imagen {
   text-align: center;
+  overflow: hidden;
 }

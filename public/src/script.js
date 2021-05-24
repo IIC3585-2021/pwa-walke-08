@@ -11,6 +11,7 @@ function displayConfirmNotification() {
   if('serviceWorker' in navigator){
     const options = {
       body: 'You subscribe to our notification service!',
+      icon: "/src/images/android-icon-48-48.png",
     };
 
     navigator.serviceWorker.ready

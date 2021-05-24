@@ -166,3 +166,12 @@ img.profile-photo-sm {
 #postear {
   padding-bottom: 80px;
 }
+
+.button-center {
+  text-align: center;
+}
+
+.container {
+  margin-left: 5px;
+  margin-right: 5px;
+}
